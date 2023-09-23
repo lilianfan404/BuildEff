@@ -5,7 +5,6 @@
 #define MAX_NAME 64
   
 
-
 typedef struct Building{
     char BuildingName[MAX_NAME];
     int SquareFootage;
