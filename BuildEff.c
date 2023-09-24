@@ -170,7 +170,7 @@ void printList(struct Node *start)
 /* Bubble sort the given linked list */
 void bubbleSort(struct Node *start) 
 { 
-    int swapped, i; 
+    int swapped;
     struct Node *ptr1; 
     struct Node *lptr = NULL; 
   
