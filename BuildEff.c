@@ -3,14 +3,13 @@
 #include <string.h>
 #define MAX_BUILDINGS 100
 #define MAX_NAME 64
-  
+
 
 typedef struct Building{
     char BuildingName[MAX_NAME];
     int SquareFootage;
     float ElectricityUsed;
     double Efficiency;
-    struct Building* next;
 }bd;
 
 typedef struct Node 
@@ -71,43 +70,11 @@ node* getBuildingList(FILE *file){
     i->next = getBuildingList(file);
     return i;
 }
-    
-/*int main(int argc, char *argv[]) 
-{ 
-    if (argc != 2) {
-        printf("Usage: ./buildEff <number>\n");
-        return 0;
-    }
-    
-    FILE *fptr = fopen(argv[1], "r");
-    
-    if (fptr == NULL){
-        printf("Error: file not found\n");
-        return 0;
-    }
-
-
-    struct Node *start = getBuildingList(fptr);
-
-
-    //int arr[] = {12, 56, 2, 11, 1, 90}; 
-    //int list_size, i; 
-    //int arr[MAX_BUILDINGS];
-
-
-
-  if (start != NULL) {
-    bubbleSort(start);
-    printList(start);
-}
-    return 0; 
-} 
-*/
 
 int main(int argc, char *argv[]) 
 { 
     if (argc != 2) {
-        printf("Usage: ./buildEff <number>\n");
+        printf("Usage: ./buildEff <filename>\n");
         return 0;
     }
     
@@ -143,17 +110,6 @@ int main(int argc, char *argv[])
     return 0; 
 }
 
-
-  
-/* Function to insert a node at the beginning of a linked list */
-/*void insertAtTheBegin(struct Node **start_ref, struct Building data) 
-{ 
-    struct Node *ptr1 = (struct Node*)malloc(sizeof(struct Node)); 
-    ptr1->data = &data; 
-    ptr1->next = *start_ref; 
-    *start_ref = ptr1; 
-} 
-*/
   
 /* Function to print nodes in a given linked list */
 void printList(struct Node *start) 
